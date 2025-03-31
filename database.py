@@ -1,18 +1,18 @@
 import sqlite3
 
-def conectar_bd():
-    return sqlite3.connect("gastos.db")
+def connect_db():
+    return sqlite3.connect("expenses.db")
 
-def criar_tabela():
-    conn = conectar_bd()
+def create_table():
+    conn = connect_db()
     cursor = conn.cursor()
     cursor.execute('''
-        CREATE TABLE IF NOT EXISTS transacoes (
+        CREATE TABLE IF NOT EXISTS transactions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            tipo TEXT CHECK(tipo IN ('receita', 'despesa')) NOT NULL,
-            descricao TEXT NOT NULL,
-            valor REAL NOT NULL,
-            data TEXT NOT NULL
+            type TEXT CHECK(type IN ('income', 'expense')) NOT NULL,
+            description TEXT NOT NULL,
+            amount REAL NOT NULL,
+            date TEXT NOT NULL
         )
     ''')
     conn.commit()
