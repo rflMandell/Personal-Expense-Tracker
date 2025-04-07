@@ -20,11 +20,7 @@ A simple command-line Personal Expense Tracker built with Python and SQLite. Thi
    git clone https://github.com/yourusername/expense-tracker.git
    cd expense-tracker
    ```
-2. Install dependencies (if required):
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Run the application:
+2. Run the application:
    ```sh
    python main.py
    ```
